@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Cardlist from './components/Cardlist'
+import SearchField from "./components/SearchField";
+import { RobotProvider } from './context/RobotContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <RobotProvider>
+        <div className="tc">
+          <h1 className="f2 white pTitle">I-made Robot Friends</h1>
+          <SearchField />
+        </div>
+
+        <div
+          style={{
+            border: "5px solid transparent",
+            marginTop: "25px",
+            height: "800px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Cardlist />
+        </div>
+      </RobotProvider>
+    </>
   );
 }
 
